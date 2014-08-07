@@ -1,6 +1,7 @@
 import numpy as np
 import scipy as sp
 import scipy.io
+import h5py
 
 
 def readLinescanData(laserdatFilename):
@@ -8,7 +9,7 @@ def readLinescanData(laserdatFilename):
     This function reads a laserdat.mat file and imports it into python as a _______________
 
     """
-    return sp.io.loadmat(laserdatFilename)
+    return h5py.File(laserdatFilename,'r')
 
 
 class LinescanAnalysis:
